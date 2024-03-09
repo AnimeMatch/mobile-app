@@ -2,11 +2,27 @@ package com.myApp.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.animematch.R
 
 // Set of Material typography styles to start with
+val Poppins = FontFamily(
+    Font(R.font.poppins_regular, FontWeight.Normal, FontStyle.Normal),
+    Font(R.font.poppins_semibold, FontWeight.SemiBold, FontStyle.Normal)
+)
+
+val Roboto = FontFamily(
+    Font(R.font.roboto_regular, FontWeight.Normal, FontStyle.Normal)
+)
+
+val Manjari = FontFamily(
+    Font(R.font.manjari_bold, FontWeight.Bold, FontStyle.Normal)
+)
+
 val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,

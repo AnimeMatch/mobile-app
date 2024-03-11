@@ -62,7 +62,7 @@ fun Carrossel(
         }
         LazyRow(
             contentPadding = PaddingValues(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(24.dp)
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             items(animes) { anime ->
                 AnimeCard(image = anime.image, text = anime.text)

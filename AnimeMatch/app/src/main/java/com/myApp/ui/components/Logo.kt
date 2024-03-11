@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
@@ -18,6 +17,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.animematch.R
@@ -25,10 +26,13 @@ import com.myApp.ui.theme.Poppins
 import com.myApp.ui.theme.Roboto
 
 @Composable
-fun Logo() {
+fun Logo(
+    fontSize: TextUnit = 16.sp,
+    fontSize2 : TextUnit = 30.sp,
+    widthFraction: Float = .13f,
+    height : Dp = 100.dp
+) {
     Row(
-        modifier = Modifier
-            .fillMaxWidth(),
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.Center
     ) {
@@ -37,21 +41,22 @@ fun Logo() {
             painter = painterResource(id = R.drawable.logo_principal),
             contentDescription = "Logo",
             modifier = Modifier
-                .fillMaxWidth(.13f)
-                .height(88.dp)
+                .fillMaxWidth(widthFraction)
+                .height(height)
         )
         Spacer(modifier = Modifier.size(8.dp))
         Column {
             Text(
                 fontFamily = Roboto,
                 text = "アニメの試合",
-                color = Color.White
+                color = Color.White,
+                fontSize = fontSize
             )
             Text(
                 fontFamily = Poppins,
                 text = "Anime Match",
                 color = Color.White,
-                fontSize = 30.sp,
+                fontSize = fontSize2
             )
         }
     }
@@ -59,6 +64,6 @@ fun Logo() {
 
 @Preview(showBackground = true)
 @Composable
-fun LogoImagePreview(){
+fun LogoImagePreview() {
     Logo()
 }

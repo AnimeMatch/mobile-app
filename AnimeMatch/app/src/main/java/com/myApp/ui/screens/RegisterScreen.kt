@@ -43,19 +43,19 @@ import com.example.animematch.R
 import com.myApp.ui.theme.AnimeMatchTheme
 import com.myApp.ui.theme.yellowAM
 
-class LoginScreenActivity : ComponentActivity() {
+class RegisterScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AnimeMatchTheme {
-                LoginScreen()
+                RegisterScreen()
             }
         }
     }
 }
 
 @Composable
-fun LoginScreen() {
+fun RegisterScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -82,10 +82,11 @@ fun LoginScreen() {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 10.dp)
+
+                
             ) {
                 Text(
-                    text = "Login",
+                    text = "Cadastro",
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
                     fontSize = 45.sp,
@@ -104,19 +105,17 @@ fun LoginScreen() {
                 )
             }
 
-//*COLUNA DO EMAIL*
+//*COLUNA DO NOME USUÁRIO*
             Column(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "E-mail",
+                    text = "Nome de usuário",
                     color = Color.White,
                     textAlign = TextAlign.Left,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(
-                            vertical = 1.dp,
-                        )
+
                 )
                 var email by remember {
                     mutableStateOf("")
@@ -135,28 +134,24 @@ fun LoginScreen() {
                     )
             }
 
-            /*COLUNA PARA SEPARAR EMAIL E SENHA*/
+            /*COLUNA PARA SEPARAR NOME E EMAIL*/
             Column(
-                modifier = Modifier.padding(10.dp)
+                modifier = Modifier.padding(6.dp)
             ) {
-
             }
 
-
-//*COLUNA DA SENHA*
+//*COLUNA DO EMAIL*
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
 
             ) {
                 Text(
-                    text = "Senha",
+                    text = "E-mail",
                     color = Color.White,
                     textAlign = TextAlign.Left,
                     modifier = Modifier
-                        .padding(
-                            vertical = 1.dp,
-                        )
+
                 )
 
                 var senha by remember {
@@ -172,38 +167,86 @@ fun LoginScreen() {
                     value = senha,
                     onValueChange = { senha = it }
                     )
-
-                Row(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(
-                        text = "Esqueceu sua senha?",
-                        color = Color.White,
-                        fontSize = 10.sp,
-                        textAlign = TextAlign.Right,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(
-                                vertical = 8.dp,
-                            )
-                    )
-                }
-
+            }
+            Column(
+                modifier = Modifier.padding(6.dp)
+            ) {
             }
 
-            /*BOTÃO DE LOGIN*/
+            /*COLUNA DA SENHA*/
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+
+            ) {
+                Text(
+                    text = "Senha",
+                    color = Color.White,
+                    textAlign = TextAlign.Left,
+                    modifier = Modifier
+                )
+
+                var senha by remember {
+                    mutableStateOf("")
+                }
+
+                OutlinedTextField(
+                    modifier = Modifier
+                        .height(30.dp)
+                        .fillMaxWidth()
+                        .clip(shape = MaterialTheme.shapes.small)
+                        .background(color = Color.White),
+                    value = senha,
+                    onValueChange = { senha = it }
+                )
+            }
+            Column(
+                modifier = Modifier.padding(6.dp)
+            ) {
+            }
+
+            /*COLUNA DO CONFIRMA SENHA*/
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+
+            ) {
+                Text(
+                    text = "Confirme a senha",
+                    color = Color.White,
+                    textAlign = TextAlign.Left,
+                    modifier = Modifier
+
+                )
+
+                var senha by remember {
+                    mutableStateOf("")
+                }
+
+                OutlinedTextField(
+                    modifier = Modifier
+                        .height(30.dp)
+                        .fillMaxWidth()
+                        .clip(shape = MaterialTheme.shapes.small)
+                        .background(color = Color.White),
+                    value = senha,
+                    onValueChange = { senha = it }
+                )
+            }
+
+            /*BOTÃO DE CADASTRO*/
             Button(
 
                 colors = ButtonDefaults.buttonColors(yellowAM),
                 modifier = Modifier
                     .align(alignment = Alignment.CenterHorizontally)
                     .fillMaxWidth()
-                    .padding(vertical = 35.dp),
+                    .padding(vertical = 20.dp),
                 shape = RoundedCornerShape(7.dp),
 
                 onClick = { /*TODO*/ }) {
                 Text(
-                    text = "Login",
+                    text = "Cadastrar",
                     color = Color.Black
                 )
 
@@ -240,7 +283,7 @@ fun LoginScreen() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "Não tem conta? Cadastre-se",
+                    text = "Tem uma conta? Logar",
                     color = Color.White,
                     fontSize = 20.sp,
                     textAlign = TextAlign.Center,
@@ -272,24 +315,13 @@ fun LoginScreen() {
 
 @Preview(showBackground = true)
 @Composable
-fun LoginScreenPreview() {
+fun RegisterScreenPreview() {
     AnimeMatchTheme {
-        LoginScreen()
+        RegisterScreen()
     }
 }
 
-@Composable
-fun Logos(imageResource: Int){
-    Spacer(modifier = Modifier.width(25.dp))
-    Image(
 
-        painter = painterResource(id = imageResource),
-        contentDescription = "Logos",
-        modifier = Modifier
-            .width(45.dp)
-            .height(50.dp))
-
-}
 
 
 

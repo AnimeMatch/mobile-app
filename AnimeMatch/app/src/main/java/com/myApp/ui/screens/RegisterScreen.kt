@@ -66,7 +66,7 @@ fun RegisterScreen() {
                         Color(0xFF000B1C),
                         Color(0xFF000B50),
                         Color(0xFF000B50),
-                        Color(0xFF000712)
+                        Color(0xFF000770)
                     )
                 )
             )
@@ -253,7 +253,8 @@ fun RegisterScreen() {
             }
             Divider(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp),
                 color = Color.White
             )
 

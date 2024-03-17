@@ -32,6 +32,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -198,7 +199,8 @@ fun LoginScreen() {
                 modifier = Modifier
                     .align(alignment = Alignment.CenterHorizontally)
                     .fillMaxWidth()
-                    .padding(vertical = 35.dp),
+                    .padding(vertical = 35.dp)
+                    .shadow(50.dp),
                 shape = RoundedCornerShape(7.dp),
 
                 onClick = { /*TODO*/ }) {
@@ -210,7 +212,9 @@ fun LoginScreen() {
             }
             Divider(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp)
+                ,
                 color = Color.White
             )
 
@@ -256,7 +260,8 @@ fun LoginScreen() {
                 modifier = Modifier
                     .align(alignment = Alignment.CenterHorizontally)
                     .fillMaxWidth()
-                    .padding(horizontal = 35.dp),
+                    .padding(horizontal = 35.dp)
+                    .shadow(10.dp),
                 shape = RoundedCornerShape(7.dp),
                 onClick = { /*TODO*/ }) {
                 Text(

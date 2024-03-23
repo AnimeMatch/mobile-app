@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AnimeMatch</string>
     <string name="title_activity_home_loggout">HomeLoggoutActivity</string>
+    <string name="title_activity_search_anime">SearchAnime</string>
 </resources>

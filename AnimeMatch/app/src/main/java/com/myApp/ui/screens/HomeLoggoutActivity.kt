@@ -1,6 +1,7 @@
 package com.myApp.ui.screens
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ScrollState
@@ -15,14 +16,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
 import com.myApp.ui.components.Carrossel
-import com.myApp.ui.components.CarrosselGender
+import com.myApp.ui.components.ListGender
 import com.myApp.ui.components.MenuSearch
 import com.myApp.ui.theme.blueBgAM
 
 class HomeLoggoutActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                )
         setContent {
             HomeLoggout()
         }
@@ -35,30 +45,29 @@ fun HomeLoggout() {
         modifier = Modifier
             .background(blueBgAM)
             .fillMaxSize()
-            .padding(vertical = 50.dp)
+            .padding(top = 50.dp)
             .verticalScroll(ScrollState(0))
     ) {
-        Column {
+        Column{
             MenuSearch()
             Spacer(modifier = Modifier.padding(vertical = 16.dp))
             Carrossel("Animes da temporada")
-            Spacer(modifier = Modifier.padding(vertical = 24.dp))
-            CarrosselGender()
-            Spacer(modifier = Modifier.padding(vertical = 10.dp))
+            Spacer(modifier = Modifier.padding(vertical = 16.dp))
+            ListGender()
+            Spacer(modifier = Modifier.padding(vertical = 16.dp))
 
             repeat(2) {
                 Carrossel("Animes atualizados recentemente")
-                Spacer(modifier = Modifier.padding(vertical = 24.dp))
+                Spacer(modifier = Modifier.padding(vertical = 16.dp))
                 Carrossel("Mangas atualizados recentemente")
-                Spacer(modifier = Modifier.padding(vertical = 24.dp))
+                Spacer(modifier = Modifier.padding(vertical = 16.dp))
                 Carrossel("Mangas mais lidos essa semana")
-                Spacer(modifier = Modifier.padding(vertical = 24.dp))
+                Spacer(modifier = Modifier.padding(vertical = 16.dp))
             }
 
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

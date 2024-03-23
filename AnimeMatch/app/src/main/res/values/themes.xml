@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Theme.AnimeMatch" parent="android:Theme.Material.NoActionBar.Overscan">
         <item name="android:windowBackground">#FF000712</item>
     </style>
 
-    <style name="Theme.OtherPages" parent="android:Theme.Material.NoActionBar.TranslucentDecor"/>
+    <style name="Theme.OtherPages" parent="android:Theme.Material.NoActionBar.TranslucentDecor" />
 </resources>

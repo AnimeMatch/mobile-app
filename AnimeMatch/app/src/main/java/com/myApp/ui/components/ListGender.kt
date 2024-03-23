@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.animematch.R
+import com.myApp.data.model.Anime
 
 
 data class Gender(
@@ -31,7 +32,7 @@ val genders = listOf(
 )
 
 @Composable
-fun CarrosselGender() {
+fun ListGender() {
     Column {
         LazyRow(
             modifier = Modifier
@@ -49,5 +50,5 @@ fun CarrosselGender() {
 @Preview(showBackground = true)
 @Composable
 fun CarrosselGenderPreview() {
-    CarrosselGender()
+    ListGender()
 }

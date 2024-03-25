@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -28,126 +30,129 @@ import com.myApp.ui.theme.blueButtomBarFocusAM
 @Composable
 fun BottomNavigationBar(
     modifier: Modifier = Modifier,
-    onHomeClick: () -> Unit = {},
-    onAnimeSearchClick: () -> Unit = {},
-    onMangaSearchClick: () -> Unit = {},
-    onForumClick: () -> Unit = {},
-    onListsClick: () -> Unit = {},
-    onPerfilClick: () -> Unit = {}
 ) {
     Row(
         modifier = modifier
-            .width(340.dp)
-            .background(blueAM, shape = RoundedCornerShape(20.dp))
-            .padding(vertical = 8.dp, horizontal = 10.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Button(
+            .fillMaxWidth()
+            .padding(bottom = 8.dp)
+            .background(Color.Transparent),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment =Alignment.CenterVertically
+    ){
+        Row(
             modifier = modifier
-                .width(90.dp)
-                .align(Alignment.CenterVertically)
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-            contentPadding = PaddingValues(4.dp),
-            colors = ButtonDefaults.buttonColors(blueButtomBarFocusAM),
-            shape = RoundedCornerShape(16.dp),
-            onClick = { /*TODO*/ }
-        ){
-            Image(
-                modifier = modifier,
-                painter = painterResource(id = R.drawable.home_bar),
-                contentDescription = "Home",
-            )
-            Text(
+                .width(340.dp)
+                .background(blueAM, shape = RoundedCornerShape(20.dp))
+                .padding(vertical = 8.dp, horizontal = 10.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Button(
                 modifier = modifier
-                    .padding(top = 4.dp, start = 4.dp),
-                text = "Inicio",
-                fontFamily = Manjari
-            )
-        }
-        Button(
-            modifier = modifier
-                .width(40.dp)
-                .align(Alignment.CenterVertically)
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-            contentPadding = PaddingValues(4.dp),
-            colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
-            shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(1.dp, blueButtomBarFocusAM),
-            onClick = { /*TODO*/ }
-        ){
-            Image(
-                modifier = modifier,
-                painter = painterResource(id = R.drawable.anime_bar),
-                contentDescription = "Anime",
-            )
-        }
-        Button(
-            modifier = modifier
-                .width(40.dp)
-                .align(Alignment.CenterVertically)
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-            contentPadding = PaddingValues(4.dp),
-            colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
-            shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(1.dp, blueButtomBarFocusAM),
-            onClick = { /*TODO*/ }
-        ){
-            Image(
-                modifier = modifier,
-                painter = painterResource(id = R.drawable.manga_bar),
-                contentDescription = "Mangá",
-            )
-        }
-        Button(
-            modifier = modifier
-                .width(40.dp)
-                .align(Alignment.CenterVertically)
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-            contentPadding = PaddingValues(4.dp),
-            colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
-            shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(1.dp, blueButtomBarFocusAM),
-            onClick = { /*TODO*/ }
-        ){
-            Image(
-                modifier = modifier,
-                painter = painterResource(id = R.drawable.coments_bar),
-                contentDescription = "Mangá",
-            )
-        }
-        Button(
-            modifier = modifier
-                .width(40.dp)
-                .align(Alignment.CenterVertically)
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-            contentPadding = PaddingValues(4.dp),
-            colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
-            shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(1.dp, blueButtomBarFocusAM),
-            onClick = { /*TODO*/ }
-        ){
-            Image(
-                modifier = modifier,
-                painter = painterResource(id = R.drawable.time_line_bar),
-                contentDescription = "Mangá",
-            )
-        }
-        Button(
-            modifier = modifier
-                .width(40.dp)
-                .align(Alignment.CenterVertically)
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-            contentPadding = PaddingValues(4.dp),
-            colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
-            shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(1.dp, blueButtomBarFocusAM),
-            onClick = { /*TODO*/ }
-        ){
-            Image(
-                modifier = modifier,
-                painter = painterResource(id = R.drawable.logo_principal),
-                contentDescription = "Mangá",
-            )
+                    .width(90.dp)
+                    .align(Alignment.CenterVertically)
+                    .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+                contentPadding = PaddingValues(4.dp),
+                colors = ButtonDefaults.buttonColors(blueButtomBarFocusAM),
+                shape = RoundedCornerShape(16.dp),
+                onClick = { /*TODO*/ }
+            ){
+                Image(
+                    modifier = modifier,
+                    painter = painterResource(id = R.drawable.home_bar),
+                    contentDescription = "Home",
+                )
+                Text(
+                    modifier = modifier
+                        .padding(top = 4.dp, start = 4.dp),
+                    text = "Inicio",
+                    fontFamily = Manjari
+                )
+            }
+            Button(
+                modifier = modifier
+                    .width(40.dp)
+                    .align(Alignment.CenterVertically)
+                    .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+                contentPadding = PaddingValues(4.dp),
+                colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, blueButtomBarFocusAM),
+                onClick = { /*TODO*/ }
+            ){
+                Image(
+                    modifier = modifier,
+                    painter = painterResource(id = R.drawable.anime_bar),
+                    contentDescription = "Anime",
+                )
+            }
+            Button(
+                modifier = modifier
+                    .width(40.dp)
+                    .align(Alignment.CenterVertically)
+                    .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+                contentPadding = PaddingValues(4.dp),
+                colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, blueButtomBarFocusAM),
+                onClick = { /*TODO*/ }
+            ){
+                Image(
+                    modifier = modifier,
+                    painter = painterResource(id = R.drawable.manga_bar),
+                    contentDescription = "Mangá",
+                )
+            }
+            Button(
+                modifier = modifier
+                    .width(40.dp)
+                    .align(Alignment.CenterVertically)
+                    .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+                contentPadding = PaddingValues(4.dp),
+                colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, blueButtomBarFocusAM),
+                onClick = { /*TODO*/ }
+            ){
+                Image(
+                    modifier = modifier,
+                    painter = painterResource(id = R.drawable.coments_bar),
+                    contentDescription = "Mangá",
+                )
+            }
+            Button(
+                modifier = modifier
+                    .width(40.dp)
+                    .align(Alignment.CenterVertically)
+                    .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+                contentPadding = PaddingValues(4.dp),
+                colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, blueButtomBarFocusAM),
+                onClick = { /*TODO*/ }
+            ){
+                Image(
+                    modifier = modifier,
+                    painter = painterResource(id = R.drawable.time_line_bar),
+                    contentDescription = "Mangá",
+                )
+            }
+            Button(
+                modifier = modifier
+                    .width(40.dp)
+                    .align(Alignment.CenterVertically)
+                    .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+                contentPadding = PaddingValues(4.dp),
+                colors = ButtonDefaults.buttonColors(blueButtomBarDefaultAM),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, blueButtomBarFocusAM),
+                onClick = { /*TODO*/ }
+            ){
+                Image(
+                    modifier = modifier,
+                    painter = painterResource(id = R.drawable.logo_principal),
+                    contentDescription = "Mangá",
+                )
+            }
         }
     }
 }

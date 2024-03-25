@@ -21,6 +21,7 @@ import com.example.animematch.R
 import com.myApp.ui.theme.Poppins
 import com.myApp.ui.theme.Roboto
 
+
 data class Anime(
     val id: Int,
     val text: String,

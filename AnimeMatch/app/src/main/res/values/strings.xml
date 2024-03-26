@@ -2,4 +2,6 @@
     <string name="app_name">AnimeMatch</string>
     <string name="title_activity_home_loggout">HomeLoggoutActivity</string>
     <string name="title_activity_search_anime">SearchAnime</string>
+    <string name="title_activity_login">SearchAnime</string>
+    <string name="title_activity_info_anime">InfoAnimeActivity</string>
 </resources>

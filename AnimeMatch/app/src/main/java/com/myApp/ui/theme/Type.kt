@@ -12,11 +12,14 @@ import com.example.animematch.R
 // Set of Material typography styles to start with
 val Poppins = FontFamily(
     Font(R.font.poppins_regular, FontWeight.Normal, FontStyle.Normal),
-    Font(R.font.poppins_semibold, FontWeight.SemiBold, FontStyle.Normal)
+    Font(R.font.poppins_semibold, FontWeight.SemiBold, FontStyle.Normal),
+    Font(R.font.poppins_bold, FontWeight.Bold, FontStyle.Normal),
+    Font(R.font.poppins_light, FontWeight.Light, FontStyle.Normal)
 )
 
 val Roboto = FontFamily(
-    Font(R.font.roboto_regular, FontWeight.Normal, FontStyle.Normal)
+    Font(R.font.roboto_regular, FontWeight.Normal, FontStyle.Normal),
+    Font(R.font.roboto_bold, FontWeight.Bold, FontStyle.Normal)
 )
 
 val Manjari = FontFamily(

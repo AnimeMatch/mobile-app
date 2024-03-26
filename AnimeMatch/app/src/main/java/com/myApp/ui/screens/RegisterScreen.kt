@@ -83,7 +83,7 @@ fun RegisterScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
 
-                
+
             ) {
                 Text(
                     text = "Cadastro",
@@ -166,7 +166,7 @@ fun RegisterScreen() {
                         .background(color = Color.White),
                     value = senha,
                     onValueChange = { senha = it }
-                    )
+                )
             }
             Column(
                 modifier = Modifier.padding(6.dp)
@@ -291,7 +291,7 @@ fun RegisterScreen() {
                     modifier = Modifier
                         .padding(vertical = 15.dp)
                         .fillMaxWidth()
-                    )
+                )
             }
 
             /*BOTÃO PULAR ETAPA*/

@@ -123,7 +123,7 @@ fun LoginScreen() {
 
                     )
 
-                Spacer(modifier = Modifier.width(35.dp))
+                Spacer(modifier = Modifier.width(15.dp))
                 Divider(
                     modifier = Modifier
                         .height(3.dp)

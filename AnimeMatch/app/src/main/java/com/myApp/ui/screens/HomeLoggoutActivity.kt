@@ -35,7 +35,6 @@ class HomeLoggoutActivity : ComponentActivity() {
                         or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 )
-        SplashScreen()
         setContent {
             HomeLoggout()
         }
@@ -51,7 +50,6 @@ fun HomeLoggout() {
             modifier = Modifier
                 .background(blueBgAM)
                 .fillMaxSize()
-                .padding(top = 50.dp)
                 .verticalScroll(ScrollState(0))
         ) {
             Column{

@@ -35,6 +35,7 @@ class HomeLoggoutActivity : ComponentActivity() {
                         or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 )
+        SplashScreen()
         setContent {
             HomeLoggout()
         }

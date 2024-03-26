@@ -22,7 +22,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.animematch.R
-import com.myApp.ui.Routes.Route
 import com.myApp.ui.theme.Manjari
 import com.myApp.ui.theme.blueAM
 import com.myApp.ui.theme.blueButtomBarDefaultAM
@@ -32,9 +31,7 @@ import com.myApp.ui.theme.orangeBorderAM
 
 @Composable
 fun BottomNavigationBarDefault(
-    modifier: Modifier = Modifier,
-    routes: List<Route>,
-    onItemClicked: (Route) -> Unit
+    modifier: Modifier = Modifier
 ) {
     Row(
         modifier = modifier
@@ -132,5 +129,5 @@ fun BottomNavigationBarDefault(
 @Preview(showBackground = true)
 @Composable
 fun BottomNavigationBarDefaultPreview() {
-    BottomNavigationBarDefault(routes)
+    BottomNavigationBarDefault()
 }

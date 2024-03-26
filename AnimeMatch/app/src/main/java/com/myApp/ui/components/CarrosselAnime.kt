@@ -1,6 +1,5 @@
 package com.myApp.ui.components
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,16 +17,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.animematch.R
+import com.myApp.data.model.Anime
 import com.myApp.ui.theme.Poppins
 import com.myApp.ui.theme.Roboto
 
-
-data class Anime(
-    val id: Int,
-    val text: String,
-    @DrawableRes
-    val image: Int
-)
 
 val animes = listOf(
     Anime(1, "Jujutsu Kaisen", image = R.drawable.jujutsu_kaisen),
@@ -43,8 +36,10 @@ fun Carrossel(
     text: String
 ) {
     Column {
-        Row (
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 5.dp),
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 5.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {

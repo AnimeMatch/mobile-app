@@ -45,7 +45,7 @@ fun AnimeCard(
                 .sizeIn(90.dp, 137.dp)
                 .clip(RoundedCornerShape(6.dp)).clickable(
                     onClick = {
-                        
+
                     }
                 )
         )

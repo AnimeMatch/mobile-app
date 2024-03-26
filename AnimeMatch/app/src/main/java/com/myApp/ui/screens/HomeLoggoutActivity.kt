@@ -12,11 +12,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
+import com.myApp.ui.components.BottomNavigationBarDefault
 import com.myApp.ui.components.Carrossel
 import com.myApp.ui.components.ListGender
 import com.myApp.ui.components.MenuSearch
@@ -41,30 +43,33 @@ class HomeLoggoutActivity : ComponentActivity() {
 
 @Composable
 fun HomeLoggout() {
-    Box(
-        modifier = Modifier
-            .background(blueBgAM)
-            .fillMaxSize()
-            .padding(top = 50.dp)
-            .verticalScroll(ScrollState(0))
-    ) {
-        Column{
-            MenuSearch()
-            Spacer(modifier = Modifier.padding(vertical = 16.dp))
-            Carrossel("Animes da temporada")
-            Spacer(modifier = Modifier.padding(vertical = 16.dp))
-            ListGender()
-            Spacer(modifier = Modifier.padding(vertical = 16.dp))
+    Scaffold(
+        bottomBar = {BottomNavigationBarDefault()}
+    ){it
+        Box(
+            modifier = Modifier
+                .background(blueBgAM)
+                .fillMaxSize()
+                .padding(top = 50.dp)
+                .verticalScroll(ScrollState(0))
+        ) {
+            Column{
+                MenuSearch()
+                Spacer(modifier = Modifier.padding(vertical = 16.dp))
+                Carrossel("Animes da temporada")
+                Spacer(modifier = Modifier.padding(vertical = 16.dp))
+                ListGender()
+                Spacer(modifier = Modifier.padding(vertical = 16.dp))
 
-            repeat(2) {
-                Carrossel("Animes atualizados recentemente")
-                Spacer(modifier = Modifier.padding(vertical = 16.dp))
-                Carrossel("Mangas atualizados recentemente")
-                Spacer(modifier = Modifier.padding(vertical = 16.dp))
-                Carrossel("Mangas mais lidos essa semana")
-                Spacer(modifier = Modifier.padding(vertical = 16.dp))
+                repeat(2) {
+                    Carrossel("Animes atualizados recentemente")
+                    Spacer(modifier = Modifier.padding(vertical = 16.dp))
+                    Carrossel("Mangas atualizados recentemente")
+                    Spacer(modifier = Modifier.padding(vertical = 16.dp))
+                    Carrossel("Mangas mais lidos essa semana")
+                    Spacer(modifier = Modifier.padding(vertical = 16.dp))
+                }
             }
-
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.myApp.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,9 +18,11 @@ import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Divider
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -37,10 +40,10 @@ import androidx.compose.ui.unit.sp
 import com.myApp.ui.theme.Roboto
 import com.myApp.ui.theme.blueAM
 import com.myApp.ui.theme.blueBgAM
+import com.myApp.ui.theme.yellowAM
 
 @Composable
-fun DropDown(
-) {
+fun DropDown() {
     val gender = listOf(
         "Sounen",
         "Seinen",
@@ -71,16 +74,18 @@ fun DropDown(
     Column(
         modifier = Modifier
             .width(132.dp)
+            .height(30.dp)
             .border(1.dp, blueAM, RoundedCornerShape(8.dp))
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp, 4.dp, 4.dp, 4.dp),
+                .height(30.dp)
+                .padding(16.dp, 0.dp, 0.dp, 0.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Box(modifier = Modifier.width(78.dp)){
+            Box(modifier = Modifier.width(78.dp)) {
                 Text(
                     text = option,
                     fontSize = 12.sp,
@@ -90,14 +95,20 @@ fun DropDown(
                     overflow = TextOverflow.Ellipsis,
                 )
             }
-            Button(
+            Divider(
                 modifier = Modifier
-                    .align(Alignment.CenterVertically)
-                    .width(32.dp)
-                    .height(32.dp),
-                contentPadding = PaddingValues(8.dp),
-                colors = ButtonDefaults.buttonColors(blueBgAM),
-                shape = RoundedCornerShape(4.dp),
+                    .height(40.dp)
+                    .width(1.dp),
+                color = Color.White
+            )
+            IconButton(
+                modifier = Modifier
+                    .background(
+                        blueBgAM,
+                        shape = RoundedCornerShape(8.dp)
+                    )
+                    .height(64.dp)
+                    .width(64.dp),
                 onClick = { isExpanded = true }
             ) {
                 Icon(

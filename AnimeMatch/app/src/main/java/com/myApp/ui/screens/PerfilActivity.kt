@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.myApp.ui.components.Carrossel
+import com.myApp.ui.components.InfoPerfil
 import com.myApp.ui.components.StatusBar
 import com.myApp.ui.theme.AnimeMatchTheme
 import com.myApp.ui.theme.blueBgAM
@@ -41,6 +42,8 @@ fun Perfil() {
             .verticalScroll(ScrollState(0))
     ){
         Column {
+            InfoPerfil()
+            Spacer(modifier = Modifier.padding(vertical = 40.dp))
             StatusBar()
             Spacer(modifier = Modifier.padding(vertical = 40.dp))
             Carrossel("Animes favoritos")
